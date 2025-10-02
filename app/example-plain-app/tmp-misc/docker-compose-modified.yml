@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  web-app:
+    image: nginx:${WEB_APP_TAG_VER-1.21}
+    ports:
+      - 80:80
+    pull_policy: ${WEB_APP_PULL_POLICY-missing}
+  api-service:
+    image: node:${API_SERVICE_TAG_VER-18-alpine}
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=production
+    pull_policy: ${API_SERVICE_PULL_POLICY-missing}
+  database:
+    image: postgres:${DATABASE_TAG_VER-14.5}
+    environment:
+      - POSTGRES_DB=myapp
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    pull_policy: ${DATABASE_PULL_POLICY-missing}
+volumes:
+  db_data: null

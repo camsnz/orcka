@@ -1,0 +1,14 @@
+{
+  "name": "example-plain-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "orcka build",
+    "up": "orcka up",
+    "down": "orcka down"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

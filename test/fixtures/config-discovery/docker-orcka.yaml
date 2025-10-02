@@ -1,0 +1,11 @@
+project:
+  name: priority-test-docker-orcka-yaml
+  context: .
+  write: docker-sha.hcl
+  bake:
+    - docker-bake.hcl
+
+targets:
+  test-service:
+    calculate_on:
+      always: true

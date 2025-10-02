@@ -1,0 +1,27 @@
+project:
+  name: test-new-features
+  context: .
+  write: test-new-features-output.hcl
+  bake:
+    - test/fixtures/docker-bake.hcl
+
+targets:
+  # This target will be calculated normally
+  audit-engine:
+    calculate_on:
+      period:
+        unit: days
+        number: 7
+  
+  # This target will be skipped due to skip_calculate: true
+  invoice-api:
+    calculate_on:
+      period:
+        unit: days
+        number: 1
+    skip_calculate: true
+  
+  # This target will be calculated with always rebuild
+  ledger-portal:
+    calculate_on:
+      always: true

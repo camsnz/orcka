@@ -1,0 +1,43 @@
+services:
+  ledger-portal:
+    build:
+      context: ./typescript-react-web
+      args:
+        VITE_AUDIT_ENGINE_URL: http://localhost:8080/info
+        VITE_INVOICE_API_URL: http://localhost:8000/info
+    image: orcka/ledger-portal:local
+    ports:
+      - "4173:80"
+    depends_on:
+      - audit-engine
+      - invoice-api
+
+  audit-engine:
+    build:
+      context: ./java-gradle-api
+      args:
+        BUILD_TIME: ${BUILD_TIME:-local-dev}
+        GIT_SHA: ${GIT_SHA:-dev-snapshot}
+        SERVICE_VERSION: ${SERVICE_VERSION:-0.0.0}
+    image: orcka/audit-engine:local
+    environment:
+      - BUILD_TIME=${BUILD_TIME:-local-dev}
+      - GIT_SHA=${GIT_SHA:-dev-snapshot}
+      - SERVICE_VERSION=${SERVICE_VERSION:-0.0.0}
+    ports:
+      - "8080:8080"
+
+  invoice-api:
+    build:
+      context: ./python-fast-api
+      args:
+        BUILD_TIME: ${BUILD_TIME:-local-dev}
+        GIT_SHA: ${GIT_SHA:-dev-snapshot}
+        SERVICE_VERSION: ${SERVICE_VERSION:-0.0.0}
+    image: orcka/invoice-api:local
+    environment:
+      - BUILD_TIME=${BUILD_TIME:-local-dev}
+      - GIT_SHA=${GIT_SHA:-dev-snapshot}
+      - SERVICE_VERSION=${SERVICE_VERSION:-0.0.0}
+    ports:
+      - "8000:8000"

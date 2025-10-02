@@ -1,0 +1,54 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "formatter": {
+    "enabled": true,
+    "includes": [
+      "src/**/*.{js,jsx,ts,tsx,cjs,cts,mts}",
+      "*.{json,yaml,yml,js,jsx,ts,tsx,cjs,cts,mts}"
+    ],
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "includes": [
+      "{scripts,src,test/fixtures}/**/*.{js,jsx,ts,tsx,cjs,cts,mts}"
+    ],
+    "rules": {
+      "recommended": true,
+      "style": {
+        "noInferrableTypes": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "warn",
+        "noTemplateCurlyInString": "off"
+      },
+      "complexity": {
+        "noStaticOnlyClass": "off"
+      },
+      "correctness": {
+        "noUnusedVariables": "warn"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.test.ts", "**/*.test.tsx", "**/test-utils/**"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "off"
+          },
+          "style": {
+            "noNonNullAssertion": "off"
+          }
+        }
+      }
+    }
+  ],
+  "javascript": {
+    "formatter": {
+      "lineWidth": 120,
+      "quoteStyle": "double"
+    }
+  }
+}

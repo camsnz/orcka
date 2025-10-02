@@ -1,0 +1,7 @@
+services:
+  audit-engine:
+    pull_policy: never
+  invoice-api:
+    pull_policy: never
+  ledger-portal:
+    pull_policy: never

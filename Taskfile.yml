@@ -1,0 +1,144 @@
+# https://taskfile.dev
+
+version: '3'
+tasks:
+  default:
+    desc: "List all tasks"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "task run --list"
+
+  analyze-files:
+    desc: "Analyze source file complexity and identify refactoring candidates"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/analyze-file-complexity.sh"
+
+  analyze-dead-code:
+    desc: "Analyze dead code using Knip (modern replacement for unimported)"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/analyze-dead-code-knip.sh"
+
+  knip:
+    desc: "Run Knip analysis (full analysis)"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "pnpm knip"
+
+  knip:deps:
+    desc: "Run Knip dependency analysis only"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "pnpm knip --production --dependencies --files"
+
+  knip:exports:
+    desc: "Run Knip exports analysis only"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "pnpm knip --include exports,types,nsExports,nsTypes"
+
+  knip:fix:
+    desc: "Run Knip with automatic fixes (use with caution)"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "pnpm knip --fix"
+
+  build:
+    desc: "Build the project"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "pnpm build"
+
+  code-hygiene:
+    desc: "Apply code hygiene, fixes, tidy up temp files"
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - task: analyze-files
+      - task: analyze-dead-code
+
+  clean:
+    desc: "Apply code clean up, fixes, tidy up temp files"
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - "pnpm run format"
+      - "rm -f test-results.xml"
+
+  ci:checks:
+    desc: "Run CI checks"
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - "pnpm install"
+      - "pnpm outdated"
+      - "pnpm audit"
+      - "pnpm run type-check"
+      - "pnpm run lint"
+      - task: build
+      - "pnpm test"
+      - task: code-hygiene
+  
+  # Health Assessment System (Modular)
+  health:
+    desc: "Comprehensive codebase health assessment (full)"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/health-check.sh"
+    ignore_error: true
+
+  health:quick:
+    desc: "Fast health check (skips slow contract tests)"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/health-check.sh --quick"
+    ignore_error: true
+
+  health:all-checks:
+    desc: "Comprehensive health assessment with ALL tests (no session optimization)"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/health-check.sh --force-all-tests"
+    ignore_error: true
+
+  health:deps:
+    desc: "Dependencies health check only"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/health-check.sh --only dependencies"
+
+  health:test:
+    desc: "Testing health check only"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/health-check.sh --only testing"
+
+  health:quality:
+    desc: "Code quality health check only"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/health-check.sh --only quality"
+
+  health:summary:
+    desc: "Health summary only (LLM-friendly)"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/health-check.sh --summary"
+
+  health:help:
+    desc: "Show health check system help and options"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/health-check.sh --help"
+
+  ci:
+    desc: "Run critical CI checks (fail-fast)"
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - "pnpm install"
+      - "pnpm run type-check:ci"
+      - "pnpm run lint:ci"
+      - "pnpm run build"
+      - "pnpm run test:ci"
+      - "pnpm run test:contract"
+
+  release:
+    desc: "Run full distributable binary and apply tag"
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - task: ci
+      - "bin/prepare-tag.sh > tmp/tag.txt"
+      - "read -p 'Build distributable binary and tag as '$(cat tmp/tag.txt)'? (y/n) ' yn && [[ $yn == [Yy]* ]]"
+      - "bin/create-branch-tag-push-return.sh $(cat tmp/tag.txt)"
+      - "bin/verify.sh $(cat tmp/tag.txt)"
+
+  ship:
+    desc: "copy the cjs over to qcore"
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - task: ci:checks
+      - "pnpm run build"
+      # - "cp bin/orcka.cjs ../../git/qcore/ci/cmd"
+      - "cp bin/orcka.cjs test/fixtures/example-plain-app/node_modules/.bin/orcka"

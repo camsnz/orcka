@@ -1,0 +1,5 @@
+#!/bin/sh
+
+GIT_DIR=$(git rev-parse --show-toplevel)
+
+$GIT_DIR/bin/orcka.cjs $@

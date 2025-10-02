@@ -1,0 +1,34 @@
+project:
+  name: orcka-demo
+  context: .
+  bake:
+    - docker-bake.hcl
+    - missing-bake-file.hcl
+  write: docker-orcka.tags.hcl
+
+targets:
+  audit-engine:
+    calculate_on:
+      files:
+        - java-gradle-api/build.gradle.kts
+        - java-gradle-api/settings.gradle.kts
+        - java-gradle-api/src/main/java
+
+  invoice-api:
+    calculate_on:
+      period:
+        unit: weeks
+        number: 2
+      files:
+        - python-fast-api/requirements.txt
+        - python-fast-api/app
+
+  ledger-portal:
+    calculate_on:
+      files:
+        - typescript-react-web/package.json
+        - typescript-react-web/pnpm-lock.yaml
+        - typescript-react-web/src
+      jq:
+        filename: typescript-react-web/package.json
+        selector: '.dependencies,.devDependencies'

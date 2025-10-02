@@ -1,0 +1,61 @@
+{
+  "name": "orcka",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A CLI tool for docker build orchestration and SHA calculation.",
+  "type": "module",
+  "main": "bin/orcka.cjs",
+  "bin": {
+    "orcka": "bin/orcka.cjs"
+  },
+  "scripts": {
+    "ci": "pnpm install && pnpm run type-check:ci && pnpm run lint:ci && pnpm run build && pnpm test:ci && pnpm test:contract",
+    "build": "vite build && node cmd/post-build.js",
+    "dev": "vite build --watch",
+    "start": "node bin/orcka.cjs",
+    "test": "vitest run",
+    "test:contract": "vitest run --config vitest.contract.config.ts",
+    "test:e2e": "vitest run --config vitest.contract.config.ts",
+    "test:ci": "vitest run --reporter=github-actions",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:coverage:ci": "vitest run --coverage --reporter=github-actions",
+    "test:coverage:open": "vitest run --coverage && open-cli etc/reports/coverage/index.html",
+    "type-check": "tsc --noEmit",
+    "type-check:ci": "tsc --noEmit --pretty false",
+    "format:imports": "organize-imports-cli tsconfig.json",
+    "format:biomejs": "biome format --fix",
+    "format": "pnpm run format:imports && pnpm run format:biomejs",
+    "lint:ci": "biome lint --reporter=summary",
+    "lint:fix": "biome lint --fix",
+    "lint": "biome lint",
+    "refactor:analyze": "node cmd/ts-analyze-names.js --suggest-renames",
+    "refactor:comments": "node cmd/ts-extract-comments.js",
+    "refactor:rename": "node cmd/ts-rename.js"
+  },
+  "dependencies": {
+    "@cdktf/hcl2json": "^0.21.0",
+    "js-yaml": "^4.1.0",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "@types/node": "^24.6.1",
+    "@vitest/coverage-istanbul": "^3.2.4",
+    "@vitest/coverage-v8": "^3.2.4",
+    "knip": "^5.64.1",
+    "open-cli": "^8.0.0",
+    "organize-imports-cli": "^0.10.0",
+    "sql.js": "^1.12.0",
+    "ts-morph": "^27.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
