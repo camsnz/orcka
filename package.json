@@ -1,6 +1,6 @@
 {
   "name": "orcka",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "description": "A CLI tool for docker build orchestration and SHA calculation.",
   "type": "module",
