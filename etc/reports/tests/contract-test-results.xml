@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="17" failures="12" errors="0" time="0.860435667">
+    <testsuite name="src/contract/orcka.e2e.spec.ts" timestamp="2025-10-13T13:57:41.181Z" hostname="esk-mac-mini-16gb" tests="6" failures="5" errors="0" skipped="0" time="0.216170542">
+        <testcase classname="src/contract/orcka.e2e.spec.ts" name="orcka e2e tests &gt; orcka stat command &gt; should calculate tags and write HCL output for valid configuration" time="0.042004166">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/orcka.e2e.spec.ts:80:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20075, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="src/contract/orcka.e2e.spec.ts" name="orcka e2e tests &gt; orcka stat command &gt; should fail with invalid configuration" time="0.034740958">
+        </testcase>
+        <testcase classname="src/contract/orcka.e2e.spec.ts" name="orcka e2e tests &gt; orcka stat command &gt; should calculate tags for services regardless of calculate_on criteria" time="0.038195334">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/orcka.e2e.spec.ts:159:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20083, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="src/contract/orcka.e2e.spec.ts" name="orcka e2e tests &gt; orcka write command &gt; should generate override file with pull_policy overrides" time="0.034903917">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs write
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs write
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/orcka.e2e.spec.ts:212:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20088, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="src/contract/orcka.e2e.spec.ts" name="orcka e2e tests &gt; orcka write command &gt; should respect custom output path and pull_policy value" time="0.033015875">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs write --output custom.yml --pull-policy always
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs write --output custom.yml --pull-policy always
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/orcka.e2e.spec.ts:254:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20090, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="src/contract/orcka.e2e.spec.ts" name="orcka e2e tests &gt; orcka integration flow &gt; should run stat by default and emit guidance" time="0.032641458">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/orcka.e2e.spec.ts:297:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20092, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/contract/context/context-field.e2e.spec.ts" timestamp="2025-10-13T13:57:41.185Z" hostname="esk-mac-mini-16gb" tests="3" failures="2" errors="0" skipped="0" time="0.112139875">
+        <testcase classname="src/contract/context/context-field.e2e.spec.ts" name="orcka.yml context handling &gt; context field behavior &gt; should honor context for write file path resolution" time="0.039946708">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/context/context-field.e2e.spec.ts:54:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20077, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="src/contract/context/context-field.e2e.spec.ts" name="orcka.yml context handling &gt; context field behavior &gt; should fail when bake file is not found relative to context" time="0.036108125">
+        </testcase>
+        <testcase classname="src/contract/context/context-field.e2e.spec.ts" name="orcka.yml context handling &gt; context field behavior &gt; should resolve bake files relative to context directory (new behavior)" time="0.035495875">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/context/context-field.e2e.spec.ts:144:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20085, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/contract/context/context-of.e2e.spec.ts" timestamp="2025-10-13T13:57:41.187Z" hostname="esk-mac-mini-16gb" tests="3" failures="2" errors="0" skipped="0" time="0.111870958">
+        <testcase classname="src/contract/context/context-of.e2e.spec.ts" name="orcka.yml context handling &gt; context_of field behavior &gt; should validate context_of field values" time="0.036418416">
+        </testcase>
+        <testcase classname="src/contract/context/context-of.e2e.spec.ts" name="orcka.yml context handling &gt; context_of field behavior &gt; should accept valid context_of values" time="0.039244">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/context/context-of.e2e.spec.ts:94:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20080, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+        <testcase classname="src/contract/context/context-of.e2e.spec.ts" name="orcka.yml context handling &gt; context_of field behavior &gt; should resolve file paths based on context_of setting" time="0.03562">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/context/context-of.e2e.spec.ts:141:24
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20084, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/contract/context/docker-sha-syntax.e2e.spec.ts" timestamp="2025-10-13T13:57:41.187Z" hostname="esk-mac-mini-16gb" tests="4" failures="2" errors="0" skipped="0" time="0.383407125">
+        <testcase classname="src/contract/context/docker-sha-syntax.e2e.spec.ts" name="orcka.yml context handling &gt; orcka.yml syntax validation &gt; should validate required project fields" time="0.078159667">
+            <failure message="expected &apos;Command failed: node /Users/cameronsc…&apos; to contain &apos;write&apos;" type="AssertionError">
+AssertionError: expected &apos;Command failed: node /Users/cameronsc…&apos; to contain &apos;write&apos;
+
+- Expected
++ Received
+
+- write
++ Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
++ node:internal/modules/cjs/loader:1423
++   throw err;
++   ^
++
++ Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
++     at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
++     at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
++     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
++     at Module._load (node:internal/modules/cjs/loader:1226:37)
++     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
++     at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
++     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
++     at node:internal/main/run_main_module:33:47 {
++   code: &apos;MODULE_NOT_FOUND&apos;,
++   requireStack: []
++ }
++
++ Node.js v24.10.0
++
+
+ ❯ src/contract/context/docker-sha-syntax.e2e.spec.ts:68:57
+            </failure>
+        </testcase>
+        <testcase classname="src/contract/context/docker-sha-syntax.e2e.spec.ts" name="orcka.yml context handling &gt; orcka.yml syntax validation &gt; should validate project field types" time="0.133363625">
+        </testcase>
+        <testcase classname="src/contract/context/docker-sha-syntax.e2e.spec.ts" name="orcka.yml context handling &gt; orcka.yml syntax validation &gt; should validate target structure" time="0.138717458">
+        </testcase>
+        <testcase classname="src/contract/context/docker-sha-syntax.e2e.spec.ts" name="orcka.yml context handling &gt; orcka.yml syntax validation &gt; should accept valid configurations" time="0.03256325">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/context/docker-sha-syntax.e2e.spec.ts:289:24
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20097, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="src/contract/context/path-resolution.e2e.spec.ts" timestamp="2025-10-13T13:57:41.188Z" hostname="esk-mac-mini-16gb" tests="1" failures="1" errors="0" skipped="0" time="0.036847167">
+        <testcase classname="src/contract/context/path-resolution.e2e.spec.ts" name="orcka.yml context handling &gt; path resolution behavior &gt; should document new context behavior" time="0.036348167">
+            <failure message="Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+" type="Error">
+Error: Command failed: node /Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs stat --file orcka.yml
+node:internal/modules/cjs/loader:1423
+  throw err;
+  ^
+
+Error: Cannot find module &apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs&apos;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: &apos;MODULE_NOT_FOUND&apos;,
+  requireStack: []
+}
+
+Node.js v24.10.0
+
+ ❯ src/contract/context/path-resolution.e2e.spec.ts:55:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: 1, signal: null, output: [ null, &apos;&apos;, &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; ], pid: 20099, stdout: &apos;&apos;, stderr: &apos;node:internal/modules/cjs/loader:1423\n  throw err;\n  ^\n\nError: Cannot find module \&apos;/Users/cameronscott/dev/code/camsnz-git/projects/orcka/bin/orcka.cjs\&apos;\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)\n    at Module._load (node:internal/modules/cjs/loader:1226:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  code: \&apos;MODULE_NOT_FOUND\&apos;,\n  requireStack: []\n}\n\nNode.js v24.10.0\n&apos; }
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

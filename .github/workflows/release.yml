@@ -1,0 +1,80 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+  id-token: write
+  packages: write
+
+jobs:
+  publish:
+    name: Publish and Distribute
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm run type-check:ci
+
+      - name: Lint
+        run: pnpm run lint:ci
+
+      - name: Unit tests
+        run: pnpm run test:ci
+
+      - name: Contract tests
+        run: pnpm run test:contract
+
+      - name: Build binary
+        run: pnpm run build
+
+      - name: Collect release binary
+        run: |
+          mkdir -p artifacts
+          cp bin/orcka.cjs artifacts/orcka-${GITHUB_REF_NAME}.cjs
+
+      - name: Pack npm tarball
+        run: pnpm pack --pack-destination artifacts
+
+      - name: Publish package
+        if: github.repository_owner == 'camsnz' && secrets.NPM_TOKEN != ''
+        run: pnpm publish --access public --provenance --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub release
+        if: github.repository_owner == 'camsnz'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: |
+            artifacts/orcka-${{ github.ref_name }}.cjs
+            artifacts/orcka-*.tgz
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ github.ref_name }}
+          path: artifacts/

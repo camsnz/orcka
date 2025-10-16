@@ -5,9 +5,9 @@ A TypeScript CLI that precalculates Docker tags by interpreting a `docker-sha.ym
 ## Install
 
 ```bash
-pnpm add -D git+https://github.com/camsnz/orcka.git
+pnpm add -D orcka
 # or install globally
-pnpm add -g git+https://github.com/camsnz/orcka.git
+pnpm add -g orcka
 ```
 
 After installation use the binary provided by pnpm/npm:
@@ -48,6 +48,10 @@ orcka validate --verbose
 # Use the generated variables with buildx bake
 docker buildx bake --file docker-bake.hcl --file docker-sha.hcl web
 ```
+
+## Releases
+
+Tagged releases (`v*`) publish the CLI to the npm registry and attach the compiled `bin/orcka.cjs` (plus the `.tgz` tarball) to the matching GitHub release. See `.github/workflows/release.yml` for the full pipeline.
 
 ## Commands
 
@@ -106,6 +110,7 @@ node bin/orcka.cjs calculate --file docker-sha.yml
 
 - [Features Overview](doc/FEATURES.md) - Comprehensive feature list
 - [Requirements](doc/REQUIREMENTS.md) - Original requirements document
+- [Release Guide](doc/RELEASE.md) - Maintainer workflow for publishing
 
 # License
 This project is licensed under the terms of the [MIT license](./LICENSE.md).

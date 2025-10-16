@@ -1,7 +1,6 @@
 {
   "name": "orcka",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
   "description": "A CLI tool for docker build orchestration and SHA calculation.",
   "type": "module",
   "main": "bin/orcka.cjs",
@@ -29,10 +28,17 @@
     "lint:ci": "biome lint --reporter=summary",
     "lint:fix": "biome lint --fix",
     "lint": "biome lint",
+    "prepack": "pnpm run build",
+    "postpack": "rm -rf bin",
     "refactor:analyze": "node cmd/ts-analyze-names.js --suggest-renames",
     "refactor:comments": "node cmd/ts-extract-comments.js",
     "refactor:rename": "node cmd/ts-rename.js"
   },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE.md"
+  ],
   "dependencies": {
     "@cdktf/hcl2json": "^0.21.0",
     "js-yaml": "^4.1.0",
@@ -52,6 +58,25 @@
     "typescript": "^5.9.3",
     "vite": "^7.1.7",
     "vitest": "^3.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/camsnz/orcka.git"
+  },
+  "bugs": {
+    "url": "https://github.com/camsnz/orcka/issues"
+  },
+  "homepage": "https://github.com/camsnz/orcka#readme",
+  "keywords": [
+    "docker",
+    "cli",
+    "buildx",
+    "hashing",
+    "orchestration"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "packageManager": "pnpm@8.15.0",
   "engines": {

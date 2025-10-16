@@ -7,6 +7,27 @@ tasks:
     dir: "{{.TASKFILE_DIR}}"
     cmd: "task run --list"
 
+  install:
+    desc: "Install dependencies with pnpm 10.18.2"
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - "pnpm install --frozen-lockfile"
+
+  test:
+    desc: "Run Vitest suites (unit + contract)"
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - "pnpm run test:ci"
+      - "pnpm run test:contract"
+
+  check:
+    desc: "Run type checks, lint, and tests"
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - "pnpm run type-check:ci"
+      - "pnpm run lint:ci"
+      - task: test
+
   analyze-files:
     desc: "Analyze source file complexity and identify refactoring candidates"
     dir: "{{.TASKFILE_DIR}}"
@@ -60,7 +81,7 @@ tasks:
     desc: "Run CI checks"
     dir: "{{.TASKFILE_DIR}}"
     cmds:
-      - "pnpm install"
+      - task: install
       - "pnpm outdated"
       - "pnpm audit"
       - "pnpm run type-check"
@@ -117,7 +138,7 @@ tasks:
     desc: "Run critical CI checks (fail-fast)"
     dir: "{{.TASKFILE_DIR}}"
     cmds:
-      - "pnpm install"
+      - task: install
       - "pnpm run type-check:ci"
       - "pnpm run lint:ci"
       - "pnpm run build"
@@ -125,14 +146,15 @@ tasks:
       - "pnpm run test:contract"
 
   release:
-    desc: "Run full distributable binary and apply tag"
+    desc: "Run release checks and tag (override SEMVER=patch|minor|major)"
     dir: "{{.TASKFILE_DIR}}"
+    vars:
+      SEMVER: '{{default "patch" .SEMVER}}'
     cmds:
-      - task: ci
-      - "bin/prepare-tag.sh > tmp/tag.txt"
-      - "read -p 'Build distributable binary and tag as '$(cat tmp/tag.txt)'? (y/n) ' yn && [[ $yn == [Yy]* ]]"
-      - "bin/create-branch-tag-push-return.sh $(cat tmp/tag.txt)"
-      - "bin/verify.sh $(cat tmp/tag.txt)"
+      - task: check
+      - "npm version {{.SEMVER}}"
+      - "git push origin HEAD"
+      - "git push origin $(git describe --tags --abbrev=0)"
 
   ship:
     desc: "copy the cjs over to qcore"
