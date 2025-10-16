@@ -63,6 +63,11 @@ tasks:
     dir: "{{.TASKFILE_DIR}}"
     cmd: "pnpm build"
 
+  new-feature:
+    desc: "Build the project"
+    dir: "{{.TASKFILE_DIR}}"
+    cmd: "./cmd/new-feature-branch.sh {{.CLI_ARGS}}"
+
   code-hygiene:
     desc: "Apply code hygiene, fixes, tidy up temp files"
     dir: "{{.TASKFILE_DIR}}"
