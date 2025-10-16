@@ -64,7 +64,7 @@ tasks:
     cmd: "pnpm build"
 
   new-feature:
-    desc: "Build the project"
+    desc: "Create a new dated feature branch"
     dir: "{{.TASKFILE_DIR}}"
     cmd: "./cmd/new-feature-branch.sh {{.CLI_ARGS}}"
 
